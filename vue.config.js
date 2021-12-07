@@ -30,6 +30,7 @@ module.exports = {
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
+    allowedHosts: ['.hanxi.cc'],
     port: port,
     open: true,
     overlay: {
