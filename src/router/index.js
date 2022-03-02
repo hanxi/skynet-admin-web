@@ -49,113 +49,100 @@ export const constantRoutes = [
     redirect: '/dashboard',
     children: [{
       path: 'dashboard',
-      name: 'Dashboard',
+      name: '首页',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '首页', icon: 'dashboard' }
     }]
   },
 
   {
-    path: '/example',
+    path: '/cluster',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
-
-  {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
+    redirect: '/cluster/index',
     meta: {
-      title: 'Nested',
-      icon: 'nested'
+      title: 'cluster',
+      icon: 'el-icon-folder'
     },
     children: [
       {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
+        path: 'index',
+        component: () => import('@/views/cluster/index'),
+        name: 'User',
+        meta: { title: 'cluster管理', icon: 'el-icon-s-tools', noCache: true }
       },
       {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
+        path: 'status',
+        component: () => import('@/views/cluster/status'),
+        name: 'Status',
+        meta: { title: 'cluster状态', icon: 'el-icon-view', noCache: true }
       }
     ]
   },
 
   {
-    path: 'external-link',
+    path: '/user',
+    component: Layout,
+    redirect: '/user/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/user/index'),
+        name: 'User',
+        meta: { title: '用户管理', icon: 'user', noCache: true }
+      },
+      {
+        path: 'profile',
+        component: () => import('@/views/user/profile'),
+        name: 'Profile',
+        hidden: true,
+        meta: { title: '个人中心', icon: 'user', noCache: true }
+      }
+    ]
+  },
+
+
+  {
+    path: 'wlua',
     component: Layout,
     children: [
       {
         path: 'https://github.com/hanxi/wlua',
-        meta: { title: 'External Link', icon: 'link' }
+        meta: { title: 'wlua', icon: 'link' }
+      }
+    ]
+  },
+
+
+  {
+    path: 'wlua-demo',
+    component: Layout,
+    children: [
+      {
+        path: 'https://github.com/hanxi/wlua-demo',
+        meta: { title: 'wlua-demo', icon: 'link' }
+      }
+    ]
+  },
+
+
+  {
+    path: 'skynet-admin',
+    component: Layout,
+    children: [
+      {
+        path: 'https://github.com/hanxi/skynet-admin',
+        meta: { title: 'skynet-admin', icon: 'link' }
+      }
+    ]
+  },
+
+  {
+    path: 'skynet',
+    component: Layout,
+    children: [
+      {
+        path: 'https://github.com/cloudwu/skynet',
+        meta: { title: 'skynet', icon: 'link' }
       }
     ]
   },

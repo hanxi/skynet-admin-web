@@ -22,3 +22,34 @@ export function logout() {
     method: 'post'
   })
 }
+
+export function setPassword(data) {
+  return request({
+    url: '/user/setpassword',
+    method: 'post',
+    data
+  })
+}
+
+export function getList() {
+  return request({
+    url: '/user/list',
+    method: 'get'
+  })
+}
+
+export function delUser(data) {
+  return request({
+    url: '/user/del',
+    method: 'post',
+    data
+  })
+}
+
+export function addUser(data) {
+  return request({
+    url: '/user/add',
+    method: 'post',
+    data
+  })
+}

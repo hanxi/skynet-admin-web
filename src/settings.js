@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'WLua Demo',
+  title: 'Skynet Admin',
 
   /**
    * @type {boolean} true | false
