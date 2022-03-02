@@ -198,6 +198,10 @@ export default {
       });
     },
     handleDetail(row) {
+      this.$message({
+        type: "warning",
+        message: "开发中...",
+      });
     },
   },
 };
