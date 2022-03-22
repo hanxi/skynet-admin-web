@@ -6,7 +6,7 @@ import { getToken } from '@/utils/auth'
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
-  // withCredentials: true, // send cookies when cross-domain requests
+  withCredentials: true, // send cookies when cross-domain requests
   timeout: 5000 // request timeout
 })
 
@@ -46,14 +46,14 @@ service.interceptors.response.use(
     const res = response.data
 
     // if the custom code is not 20000, it is judged as an error.
-    if (res.code !== "OK") {
+    if (res.code !== 'OK') {
       Message({
         message: res.msg || 'Error',
         type: 'error',
         duration: 5 * 1000
       })
 
-      if (res.code === "UN_LOGIN" || res.code === "LOGIN_FAILED") {
+      if (res.code === 'UN_LOGIN' || res.code === 'LOGIN_FAILED') {
         // to re-login
         MessageBox.confirm('You have been logged out, you can cancel to stay on this page, or log in again', 'Confirm logout', {
           confirmButtonText: 'Re-Login',

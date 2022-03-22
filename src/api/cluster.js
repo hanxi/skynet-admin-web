@@ -30,3 +30,11 @@ export function updateNode(data) {
     data
   })
 }
+
+export function getDetail(id) {
+  return request({
+    url: '/cluster/detail/' + id,
+    method: 'get'
+  })
+}
+

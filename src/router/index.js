@@ -100,7 +100,6 @@ export const constantRoutes = [
     ]
   },
 
-
   {
     path: 'wlua',
     component: Layout,
@@ -112,7 +111,6 @@ export const constantRoutes = [
     ]
   },
 
-
   {
     path: 'wlua-demo',
     component: Layout,
@@ -123,7 +121,6 @@ export const constantRoutes = [
       }
     ]
   },
-
 
   {
     path: 'skynet-admin',
