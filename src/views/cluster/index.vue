@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import { getList, delNode, addNode, updateNode } from '@/api/cluster'
+import { getList, delNode, addNode, updateNode, reload } from '@/api/cluster'
 import { getExactTime } from '@/utils/index'
 
 export default {
@@ -106,6 +106,10 @@ export default {
   methods: {
     fetchData() {
       getList().then((response) => {
+        if (!response.data.nodes.map) {
+            this.list = null
+            return
+        }
         this.list = response.data.nodes.map((element) => {
           if (element.createtime) {
             element.createtime = getExactTime(element.createtime)
@@ -137,6 +141,7 @@ export default {
                 type: 'success',
                 message: '删除成功!'
               })
+              reload()
               this.fetchData()
             } else {
               this.$message({
@@ -163,6 +168,7 @@ export default {
             type: 'success',
             message: '添加节点成功!'
           })
+          reload()
           this.fetchData()
         } else {
           this.$message({
@@ -188,6 +194,7 @@ export default {
             message: '修改节点成功!'
           })
           this.updateNodeDialogVisible = false
+          reload()
           this.fetchData()
         } else {
           this.$message({

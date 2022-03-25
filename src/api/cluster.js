@@ -45,3 +45,10 @@ export function getNodeNames() {
   })
 }
 
+export function reload() {
+  return request({
+    url: '/cluster/reload',
+    method: 'post'
+  })
+}
+
