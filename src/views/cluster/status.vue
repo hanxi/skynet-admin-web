@@ -19,7 +19,7 @@
         :default-sort="{prop: 'addr', order: 'ascending'}"
       >
         <el-table-column prop="addr" label="addr" align="center" sortable />
-        <el-table-column prop="service" label="service" sortable />
+        <el-table-column prop="service" label="service" header-align="center" sortable />
         <el-table-column prop="mem" label="mem" align="center" sortable />
         <el-table-column prop="cpu" label="cpu" align="center" sortable />
         <el-table-column prop="message" label="message" align="center" sortable />
