@@ -107,8 +107,8 @@ export default {
     fetchData() {
       getList().then((response) => {
         if (!response.data.nodes.map) {
-            this.list = null
-            return
+          this.list = null
+          return
         }
         this.list = response.data.nodes.map((element) => {
           if (element.createtime) {
