@@ -14,7 +14,7 @@
           <router-link to="/user/profile">
             <el-dropdown-item>个人中心</el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/hanxi/wlua">
+          <a target="_blank" href="https://github.com/hanxi/skynet-admin">
             <el-dropdown-item>Github</el-dropdown-item>
           </a>
           <el-dropdown-item divided @click.native="logout">
