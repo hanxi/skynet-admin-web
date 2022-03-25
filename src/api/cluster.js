@@ -31,9 +31,16 @@ export function updateNode(data) {
   })
 }
 
-export function getDetail(id) {
+export function getDetail(nodename) {
   return request({
-    url: '/cluster/detail/' + id,
+    url: '/cluster/detail/' + nodename,
+    method: 'get'
+  })
+}
+
+export function getNodeNames() {
+  return request({
+    url: '/cluster/nodenames',
     method: 'get'
   })
 }

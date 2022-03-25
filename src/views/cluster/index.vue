@@ -198,9 +198,11 @@ export default {
       })
     },
     handleDetail(row) {
-      this.$message({
-        type: 'warning',
-        message: '开发中...'
+      this.$router.push({
+        path: '/cluster/status',
+        query: {
+          nodename: row.name
+        }
       })
     }
   }
